@@ -7,6 +7,6 @@ objbuilder=$sdkdir/builder/objbuilder
 #config project's sot setting
 EnableSot=1
 GenerateSotShip=0
-EnableSotTest=1
+EnableSotTest=0
 
 # ForceNoFixFunc_Ship_SotSwiftTest=("[\s\S]*CMa")
