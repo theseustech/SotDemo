@@ -1,9 +1,9 @@
 #import "ViewController.h"
 #import "ShipOTDemo-Swift.h"
 
-//#ifdef USE_SOT
-//#import "../sotsdk/libs/SotWebService.h"
-//#endif
+#ifdef USE_SOT
+#import "../sotsdk/libs/SotWebService.h"
+#endif
 
 @interface ViewController ()
 
@@ -46,33 +46,33 @@
     NSString* msg = [NSString stringWithFormat:@"versionkey: %@", version_key_str];
     NSLog(@"%@", msg);
     
-//#ifdef USE_SOT
-//    SotApplyCachedResult ApplyShipResult = [SotWebService ApplyCachedAndPullShip:version_key_str is_dev:false cb:^(SotDownloadScriptStatus status)
-//        {
-//            if(status == SotScriptShipAlreadyNewest)
-//            {
-//                NSLog(@"SyncOnly SotScriptShipAlreadyNewest");
-//            }
-//            else if(status == SotScriptShipHasSyncNewer)
-//            {
-//                NSLog(@"SyncOnly SotScriœœptShipHasSyncNewer");
-//            }
-//            else if(status == SotScriptShipDisable)
-//            {
-//                NSLog(@"SyncOnly SotScriptShipDisable");
-//            }
-//            else
-//            {
-//                NSLog(@"SyncOnly SotScriptStatusFailure");
-//            }
-//        }];
-//
-//        if(ApplyShipResult.Success)
-//        {
-//            if(ApplyShipResult.ShipMD5)
-//                NSLog(@"sot success apply cached ship md5:%@", ApplyShipResult.ShipMD5);
-//        }
-//#endif
+#ifdef USE_SOT
+    SotApplyCachedResult ApplyShipResult = [SotWebService ApplyCachedAndPullShip:version_key_str is_dev:false cb:^(SotDownloadScriptStatus status)
+        {
+            if(status == SotScriptShipAlreadyNewest)
+            {
+                NSLog(@"SyncOnly SotScriptShipAlreadyNewest");
+            }
+            else if(status == SotScriptShipHasSyncNewer)
+            {
+                NSLog(@"SyncOnly SotScriœœptShipHasSyncNewer");
+            }
+            else if(status == SotScriptShipDisable)
+            {
+                NSLog(@"SyncOnly SotScriptShipDisable");
+            }
+            else
+            {
+                NSLog(@"SyncOnly SotScriptStatusFailure");
+            }
+        }];
+
+        if(ApplyShipResult.Success)
+        {
+            if(ApplyShipResult.ShipMD5)
+                NSLog(@"sot success apply cached ship md5:%@", ApplyShipResult.ShipMD5);
+        }
+#endif
 }
 
 - (IBAction)RunDemoCode:(id)sender
@@ -80,7 +80,7 @@
     NSString* input1_str = [input1 text];
     TestSwift* swift_ins = [[TestSwift alloc] init];
     input1_str = [swift_ins test:input1_str];
-    NSString* outcome_str = [NSString stringWithFormat:@"hello SOT:%@", input1_str];
+    NSString* outcome_str = [NSString stringWithFormat:@"hello SOT test patch11:%@", input1_str];
     [outcome setText:outcome_str];
 }
 @end

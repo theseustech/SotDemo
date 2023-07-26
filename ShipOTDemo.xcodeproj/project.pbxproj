@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4E1049C9268ED53C008FF0C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EAB64AD26158966000D3D22 /* AppDelegate.m */; };
 		4E1049CF268ED53F008FF0C3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EAB64B026158966000D3D22 /* SceneDelegate.m */; };
 		4E1049D5268ED542008FF0C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EAB64B326158966000D3D22 /* ViewController.m */; };
+		4E13E88E2A6D5CFA003FEBF7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5EF7E92618CB090040CAD7 /* libc++.tbd */; };
+		4E13E88F2A6D5D00003FEBF7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3E934526B593F600E972D1 /* libz.tbd */; };
 		4E3E932626B577E900E972D1 /* SwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E932526B577E900E972D1 /* SwiftTest.swift */; };
 		4E3E933826B58EF900E972D1 /* SwfitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E933726B58EF900E972D1 /* SwfitFile.swift */; };
 		4E3E933D26B58F4500E972D1 /* libSwiftTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3E932326B577E900E972D1 /* libSwiftTest.a */; };
@@ -70,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E13E88F2A6D5D00003FEBF7 /* libz.tbd in Frameworks */,
+				4E13E88E2A6D5CFA003FEBF7 /* libc++.tbd in Frameworks */,
 				4E3E933D26B58F4500E972D1 /* libSwiftTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +170,7 @@
 				4EAB64A526158966000D3D22 /* Sources */,
 				4EAB64A626158966000D3D22 /* Frameworks */,
 				4EAB64A726158966000D3D22 /* Resources */,
+				4E13E88D2A6D30F5003FEBF7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -226,6 +231,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4E13E88D2A6D30F5003FEBF7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$CONFIGURATION\" == \"SotRelease\" ]];then\n      sh \"$SOURCE_ROOT/sotsdk/project-script/sot_package.sh\" \"$SOURCE_ROOT/sotsdk/project-script/sotconfig.sh\" \"$SOURCE_ROOT/sotsaved/$CONFIGURATION\" ShipOTDemo SwiftTest\n    fi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4E3E931F26B577E900E972D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -269,6 +295,129 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4E13E88A2A6D268A003FEBF7 /* SotRelease */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = SotRelease;
+		};
+		4E13E88B2A6D268A003FEBF7 /* SotRelease */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GCC_PREPROCESSOR_DEFINITIONS = "USE_SOT=1";
+				INFOPLIST_FILE = ShipOTDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LLVM_LTO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-sotmodule",
+					"$(PRODUCT_NAME)",
+					"-sotconfig",
+					"$(SRCROOT)/sotsdk/project-script/sotconfig.sh",
+				);
+				OTHER_LDFLAGS = (
+					"-sotmodule",
+					"$(PRODUCT_NAME)",
+					"$(SRCROOT)/sotsdk/libs/libsot_web.a",
+					"-sotsaved",
+					"$(SRCROOT)/sotsaved/$(CONFIGURATION)/$(CURRENT_ARCH)",
+					"-sotconfig",
+					"$(SRCROOT)/sotsdk/project-script/sotconfig.sh",
+				);
+				OTHER_SWIFT_FLAGS = "-Xfrontend -sotmodule -Xfrontend $(PRODUCT_NAME) -Xfrontend -sotconfig -Xfrontend $(SRCROOT)/sotsdk/project-script/sotconfig.sh";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sotvm.shipdd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ShipOTDemo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = SotRelease;
+		};
+		4E13E88C2A6D268A003FEBF7 /* SotRelease */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_CFLAGS = (
+					"-sotmodule",
+					"$(PRODUCT_NAME)",
+					"-sotconfig",
+					"$(SRCROOT)/sotsdk/project-script/sotconfig.sh",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LIBTOOLFLAGS = "-sotmodule $(PRODUCT_NAME) -sotsaved $(SRCROOT)/sotsaved/$(CONFIGURATION)/$(CURRENT_ARCH) -sotconfig $(SRCROOT)/sotsdk/project-script/sotconfig.sh";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -sotmodule -Xfrontend $(PRODUCT_NAME) -Xfrontend -sotconfig -Xfrontend $(SRCROOT)/sotsdk/project-script/sotconfig.sh";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = SotRelease;
+		};
 		4E3E932826B577E900E972D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -493,6 +642,7 @@
 			buildConfigurations = (
 				4E3E932826B577E900E972D1 /* Debug */,
 				4E3E932926B577E900E972D1 /* Release */,
+				4E13E88C2A6D268A003FEBF7 /* SotRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -502,6 +652,7 @@
 			buildConfigurations = (
 				4EAB64C026158967000D3D22 /* Debug */,
 				4EAB64C126158967000D3D22 /* Release */,
+				4E13E88A2A6D268A003FEBF7 /* SotRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -511,6 +662,7 @@
 			buildConfigurations = (
 				4EAB64C326158967000D3D22 /* Debug */,
 				4EAB64C426158967000D3D22 /* Release */,
+				4E13E88B2A6D268A003FEBF7 /* SotRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
