@@ -1,6 +1,9 @@
 #import "ViewController.h"
 #import "ShipOTDemo-Swift.h"
-#import "/Users/sotsdk-1.0/libs/SotWebService.h"
+
+//#ifdef USE_SOT
+//#import "../sotsdk/libs/SotWebService.h"
+//#endif
 
 @interface ViewController ()
 
@@ -40,45 +43,36 @@
     [save_info setValue:version_key_str forKey:@"versionkey"];
     [save_info writeToFile:save_info_filepath atomically:YES];
     
-#ifdef DEBUG // use free version
-    [SotWebService ApplyBundleShip];
-#else
-#ifdef SOT_ENTERPRISE
-    NSBundle* MainBundle = [NSBundle mainBundle];
-    NSString *ShipPath = [MainBundle pathForResource:@"shipinfo" ofType:@"sot"];
-    if(!ShipPath)
-    {
-        NSLog(@"err");
-        return;
-    }
-    NSURL *fileUrl = [NSURL fileURLWithPath:ShipPath];
-    if(!fileUrl)
-        return;
-    NSData *fileData = [NSData dataWithContentsOfURL:fileUrl];
-    if(!fileData)
-        return;
-    char *fileBytes = (char *)[fileData bytes];
-    NSUInteger length = [fileData length];
-    if ([SotWebService ApplyShipByData:fileBytes length:length])
-    {
-        NSLog(@"apply ship success");
-    }
-#else // use web version
     NSString* msg = [NSString stringWithFormat:@"versionkey: %@", version_key_str];
     NSLog(@"%@", msg);
-    [SotWebService Sync:version_key_str is_dev:false cb:^(SotDownloadScriptStatus status)
-    {
-        if(status == SotScriptStatusSuccess)
-        {
-            NSLog(@"SotScriptStatusSuccess");
-        }
-        else
-        {
-            NSLog(@"SotScriptStatusFailure");
-        }
-    }];
-#endif
-#endif
+    
+//#ifdef USE_SOT
+//    SotApplyCachedResult ApplyShipResult = [SotWebService ApplyCachedAndPullShip:version_key_str is_dev:false cb:^(SotDownloadScriptStatus status)
+//        {
+//            if(status == SotScriptShipAlreadyNewest)
+//            {
+//                NSLog(@"SyncOnly SotScriptShipAlreadyNewest");
+//            }
+//            else if(status == SotScriptShipHasSyncNewer)
+//            {
+//                NSLog(@"SyncOnly SotScriœœptShipHasSyncNewer");
+//            }
+//            else if(status == SotScriptShipDisable)
+//            {
+//                NSLog(@"SyncOnly SotScriptShipDisable");
+//            }
+//            else
+//            {
+//                NSLog(@"SyncOnly SotScriptStatusFailure");
+//            }
+//        }];
+//
+//        if(ApplyShipResult.Success)
+//        {
+//            if(ApplyShipResult.ShipMD5)
+//                NSLog(@"sot success apply cached ship md5:%@", ApplyShipResult.ShipMD5);
+//        }
+//#endif
 }
 
 - (IBAction)RunDemoCode:(id)sender

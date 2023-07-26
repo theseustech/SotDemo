@@ -13,8 +13,6 @@
 		4E3E932626B577E900E972D1 /* SwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E932526B577E900E972D1 /* SwiftTest.swift */; };
 		4E3E933826B58EF900E972D1 /* SwfitFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E933726B58EF900E972D1 /* SwfitFile.swift */; };
 		4E3E933D26B58F4500E972D1 /* libSwiftTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3E932326B577E900E972D1 /* libSwiftTest.a */; };
-		4E3E934626B593F600E972D1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3E934526B593F600E972D1 /* libz.tbd */; };
-		4E5EF7EA2618CB090040CAD7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5EF7E92618CB090040CAD7 /* libc++.tbd */; };
 		4EAB64B726158966000D3D22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EAB64B526158966000D3D22 /* Main.storyboard */; };
 		4EAB64B926158967000D3D22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EAB64B826158967000D3D22 /* Assets.xcassets */; };
 		4EAB64BC26158967000D3D22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EAB64BA26158967000D3D22 /* LaunchScreen.storyboard */; };
@@ -52,6 +50,12 @@
 		4EAB64BB26158967000D3D22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EAB64BD26158967000D3D22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EAB64BE26158967000D3D22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4EAD40002A5A447800E622C8 /* NativeInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = NativeInterface.cpp; path = ../../../../../Applications/sot/irvm/cpphotfix/NativeInterface.cpp; sourceTree = "<group>"; };
+		4EAD40012A5A450800E622C8 /* NativeApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NativeApi.h; path = ../../../../../Applications/sot/irvm/cpphotfix/NativeApi.h; sourceTree = "<group>"; };
+		4EAD40022A5A492600E622C8 /* ffihelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ffihelper.h; path = ../../../../../Applications/sot/irvm/ffihelper.h; sourceTree = "<group>"; };
+		4EAD40032A5A4B6B00E622C8 /* ffihelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ffihelper.cpp; path = ../../../../../Applications/sot/irvm/vm/ffihelper.cpp; sourceTree = "<group>"; };
+		4EC233302A65723B00D29210 /* sotvm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = sotvm.cpp; path = ../../../../../Applications/sot16/irvm/vm/sotvm.cpp; sourceTree = "<group>"; };
+		4EC233322A6C1BDD00D29210 /* SotWebService.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = SotWebService.mm; path = ../sot16/iOSsot/sotlib/sotlib/SotWebService.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E3E934626B593F600E972D1 /* libz.tbd in Frameworks */,
-				4E5EF7EA2618CB090040CAD7 /* libc++.tbd in Frameworks */,
 				4E3E933D26B58F4500E972D1 /* libSwiftTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +127,12 @@
 		4EAB64E526158DA5000D3D22 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4EC233322A6C1BDD00D29210 /* SotWebService.mm */,
+				4EC233302A65723B00D29210 /* sotvm.cpp */,
+				4EAD40002A5A447800E622C8 /* NativeInterface.cpp */,
+				4EAD40032A5A4B6B00E622C8 /* ffihelper.cpp */,
+				4EAD40022A5A492600E622C8 /* ffihelper.h */,
+				4EAD40012A5A450800E622C8 /* NativeApi.h */,
 				4E3E934526B593F600E972D1 /* libz.tbd */,
 				4E5EF7E92618CB090040CAD7 /* libc++.tbd */,
 			);
@@ -158,7 +166,6 @@
 				4EAB64A526158966000D3D22 /* Sources */,
 				4EAB64A626158966000D3D22 /* Frameworks */,
 				4EAB64A726158966000D3D22 /* Resources */,
-				4E3E935326B594AF00E972D1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -219,26 +226,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4E3E935326B594AF00E972D1 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "sh /Users/sotsdk-1.0/project-script/sot_package.sh \"$SOURCE_ROOT/sotconfig.sh\" \"$SOURCE_ROOT/sotsaved/$CONFIGURATION\" ShipOTDemo SwiftTest\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		4E3E931F26B577E900E972D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -287,15 +274,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_CFLAGS = (
-					"-sotmodule",
-					"$(PRODUCT_NAME)",
-					"-sotconfig",
-					"$(SRCROOT)/sotconfig.sh",
-				);
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
-				OTHER_LIBTOOLFLAGS = "-sotmodule $(PRODUCT_NAME) -sotsaved $(SRCROOT)/sotsaved/$(CONFIGURATION)/$(CURRENT_ARCH) -sotconfig $(SRCROOT)/sotconfig.sh";
-				OTHER_SWIFT_FLAGS = "-sotmodule $(PRODUCT_NAME) -sotconfig $(SRCROOT)/sotconfig.sh";
+				OTHER_LIBTOOLFLAGS = "";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -310,145 +292,18 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_CFLAGS = (
-					"-sotmodule",
-					"$(PRODUCT_NAME)",
-					"-sotconfig",
-					"$(SRCROOT)/sotconfig.sh",
-				);
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
-				OTHER_LIBTOOLFLAGS = "-sotmodule $(PRODUCT_NAME) -sotsaved $(SRCROOT)/sotsaved/$(CONFIGURATION)/$(CURRENT_ARCH) -sotconfig $(SRCROOT)/sotconfig.sh";
-				OTHER_SWIFT_FLAGS = "-sotmodule $(PRODUCT_NAME) -sotconfig $(SRCROOT)/sotconfig.sh";
+				OTHER_LIBTOOLFLAGS = "";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
-		};
-		4E3E937E26B7A9C200E972D1 /* Release_enterprise */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_BITCODE = NO;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release_enterprise;
-		};
-		4E3E937F26B7A9C200E972D1 /* Release_enterprise */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Zai Xin (L5FA8M55V4)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = L5FA8M55V4;
-				EXCLUDED_ARCHS = "";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 i386";
-				GCC_PREPROCESSOR_DEFINITIONS = "";
-				INFOPLIST_FILE = ShipOTDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_CFLAGS = (
-					"-sotmodule",
-					"$(PRODUCT_NAME)",
-					"-sotconfig",
-					"$(SRCROOT)/sotconfig.sh",
-				);
-				OTHER_LDFLAGS = (
-					"-sotmodule",
-					"$(PRODUCT_NAME)",
-					"/Users/sotsdk-1.0/libs/libsot_enterprise.a",
-					"-sotsaved",
-					"$(SRCROOT)/sotsaved/$(CONFIGURATION)/$(CURRENT_ARCH)",
-					"-sotconfig",
-					"$(SRCROOT)/sotconfig.sh",
-				);
-				OTHER_SWIFT_FLAGS = "-sotmodule $(PRODUCT_NAME) -sotconfig $(SRCROOT)/sotconfig.sh";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sotvm.ship;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = sotship;
-				SWIFT_OBJC_BRIDGING_HEADER = "ShipOTDemo-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release_enterprise;
-		};
-		4E3E938026B7A9C200E972D1 /* Release_enterprise */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_CFLAGS = (
-					"-sotmodule",
-					"$(PRODUCT_NAME)",
-					"-sotconfig",
-					"$(SRCROOT)/sotconfig.sh",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				OTHER_LIBTOOLFLAGS = "-sotmodule $(PRODUCT_NAME) -sotsaved $(SRCROOT)/sotsaved/$(CONFIGURATION)/$(CURRENT_ARCH) -sotconfig $(SRCROOT)/sotconfig.sh";
-				OTHER_SWIFT_FLAGS = "-sotmodule $(PRODUCT_NAME) -sotconfig $(SRCROOT)/sotconfig.sh";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release_enterprise;
 		};
 		4EAB64C026158967000D3D22 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -571,9 +426,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Zai Xin (L5FA8M55V4)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = L5FA8M55V4;
+				DEVELOPMENT_TEAM = "";
 				EXCLUDED_ARCHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -585,25 +440,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_CFLAGS = (
-					"-sotmodule",
-					"$(PRODUCT_NAME)",
-					"-sotconfig",
-					"$(SRCROOT)/sotconfig.sh",
-				);
-				OTHER_LDFLAGS = (
-					"-sotmodule",
-					"$(PRODUCT_NAME)",
-					"/Users/sotsdk-1.0/libs/libsot_free.a",
-					"-sotsaved",
-					"$(SRCROOT)/sotsaved/$(CONFIGURATION)/$(CURRENT_ARCH)",
-					"-sotconfig",
-					"$(SRCROOT)/sotconfig.sh",
-				);
-				OTHER_SWIFT_FLAGS = "-sotmodule $(PRODUCT_NAME) -sotconfig $(SRCROOT)/sotconfig.sh";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sotvm.ship;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sotvm.shipdd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = sotship;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShipOTDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -618,11 +460,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Zai Xin (L5FA8M55V4)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = L5FA8M55V4;
+				DEVELOPMENT_TEAM = "";
 				EXCLUDED_ARCHS = "";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 i386";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = ShipOTDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -630,26 +471,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LLVM_LTO = NO;
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_CFLAGS = (
-					"-sotmodule",
-					"$(PRODUCT_NAME)",
-					"-sotconfig",
-					"$(SRCROOT)/sotconfig.sh",
-				);
-				OTHER_LDFLAGS = (
-					"-sotmodule",
-					"$(PRODUCT_NAME)",
-					"/Users/sotsdk-1.0/libs/libsot_web.a",
-					"-sotsaved",
-					"$(SRCROOT)/sotsaved/$(CONFIGURATION)/$(CURRENT_ARCH)",
-					"-sotconfig",
-					"$(SRCROOT)/sotconfig.sh",
-				);
-				OTHER_SWIFT_FLAGS = "-sotmodule $(PRODUCT_NAME) -sotconfig $(SRCROOT)/sotconfig.sh";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sotvm.ship;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sotvm.shipdd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = sotship;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShipOTDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -664,7 +493,6 @@
 			buildConfigurations = (
 				4E3E932826B577E900E972D1 /* Debug */,
 				4E3E932926B577E900E972D1 /* Release */,
-				4E3E938026B7A9C200E972D1 /* Release_enterprise */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -674,7 +502,6 @@
 			buildConfigurations = (
 				4EAB64C026158967000D3D22 /* Debug */,
 				4EAB64C126158967000D3D22 /* Release */,
-				4E3E937E26B7A9C200E972D1 /* Release_enterprise */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -684,7 +511,6 @@
 			buildConfigurations = (
 				4EAB64C326158967000D3D22 /* Debug */,
 				4EAB64C426158967000D3D22 /* Release */,
-				4E3E937F26B7A9C200E972D1 /* Release_enterprise */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
